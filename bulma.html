@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            margin: 0px;
+            padding 0px;
+            background-color: limegreen;
+        }
+        header{
+            background-color: green;
+            display: flex;
+            flex-direction: row;
+            height: 30px;
+        }
+        h1{
+            display: block;
+            margin: 0px;
+            padding: 5px, 10px;
+            min-width: 100px;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 5px;
+            color: yellow;
+        }
+        a{
+            color: white;
+        }
+        header > div:hover{
+            background-color: lightgreen;
+            position: relative;
+        }
+        header > div > div{
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: green;
+            width : 100%;
+        }
+        header > div:hover > div, nav > div:focus-within > div {
+            display: flex;
+        }
+        header input{
+            position: absolute;
+            top: -1000px;
+        }
+        header a{
+            display: block;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+        header a:hover{
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <header> 
+        <div>
+            <h1>File</h1>
+            <div>
+                <a href="https://www.whitepages.com/" target="_blank">New</a>
+                <a href="https://www.whitepages.com/" target="_blank">Open</a>
+                <a href="https://www.whitepages.com/" target="_blank">Save</a>
+                <a href="https://www.whitepages.com/" target="_blank">Print</a>
+                <a href="https://www.whitepages.com/" target="_blank">Close</a>
+            </div>
+        </div>    
+        <div>
+            <h1>Edit</h1>
+            <div>
+                <a href="https://www.whitepages.com/" target="_blank">Undo</a>                    <a href="https://www.whitepages.com/" target="_blank">Redo</a>
+                <a href="https://www.whitepages.com/" target="_blank">Cut</a>
+                <a href="https://www.whitepages.com/" target="_blank">Copy</a>
+                <a href="https://www.whitepages.com/" target="_blank">Paste</a>
+                <a href="https://www.whitepages.com/" target="_blank">Delete</a>
+                <a href="https://www.whitepages.com/" target="_blank">Select all</a>
+            </div>
+        </div>
+        <div>
+            <h1>View</h1>
+            <div>
+                <a href="https://www.whitepages.com/" target="_blank">Zoom in</a>
+                <a href="https://www.whitepages.com/" target="_blank">Zoom out</a>
+                <a href="https://www.whitepages.com/" target="_blank">Actual size</a>
+                <a href="https://www.whitepages.com/" target="_blank">Fit page</a>
+                <a href="https://www.whitepages.com/" target="_blank">Fit width</a>
+                <a href="https://www.whitepages.com/" target="_blank">Fit height</a>
+                <a href="https://www.whitepages.com/" target="_blank">Roate left</a>
+                <a href="https://www.whitepages.com/" target="_blank">Rotate right</a>
+                <a href="https://www.whitepages.com/" target="_blank">Full screen</a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

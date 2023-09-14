@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scaled=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+    <nav class="navbar is-primary">
+        <div class="navbar-logo">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="https://bulma.io/assets/Bulma%20Logo.png">
+            </a>
+        </div>
+        <div id="NavbarColor" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="https://bulma.io/">Home</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="https://bluma.io/documentation/pverview/start/">Docs</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://bulma.io">Overview</a>
+                        <a class="navbar-item" href="https://bulma.io">Modifiers</a>
+                        <a class="navbar-item" href="https://bulma.io">Columns</a>
+                        <a class="navbar-item" href="https://bulma.io">Layout</a>
+                        <a class="navbar-item" href="https://bulma.io">Form</a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" href="https://bulma.io">Elements</a>
+                        <a class="navbar-item" href="https://bulma.io">Components</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <a class="bd-tw-button button" target="_blank" href="https://twitter.com/">
+                                <span class="icon">
+                                    <img id="icon" src="https://cdn-icons-png.flaticon.com/512/733/733635.png">
+                                </span>
+                                <span>
+                                    Twitter
+                                </span>
+                            </a>
+                        </div>
+                        <div class="control">
+                            <a class="button is-primary" href="href="https://github.com/jgthms/bulma/releases/download/0.9.3/bulma-0.9.3.zip">
+                                Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">Component</p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </button>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                Lorem word words words words, wrod words words. Words words words words.
+                                <a href="#">@bulmaio</a>
+                                <a href="#">#css</a>
+                                <a href="#">#responsive</a>
+                                <br>
+                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a class="card-footer-item" href="#">
+                                Save
+                            </a>
+                            <a class="card-footer-item" href="#">
+                                Edit
+                            </a>
+                            <a class="card-footer-item" href="#">
+                                Delete
+                            </a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <article class="panel">
+                        <div class="tabs is-boxed">
+                            <ul>
+                                <li class="is-active">
+                                    <a>
+                                        <span class="icon">
+                                            <img id="icon" src="https://cdn-icons-png.flaticon.com/512/733/733635.png">
+                                        </span>
+                                        <span>
+                                            Current
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="icon is-left">
+                                            <img src="data:image/png;base64,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">
+                                        </span>
+                                        <span>
+                                            Completed
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="icon is-left">
+                                            <img src="data:image/png;base64,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">
+                                        </span>
+                                        <span>
+                                            Upcoming
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="icon is-left">
+                                            <img src="data:image/png;base64,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">
+                                        </span>
+                                        <span>
+                                            All
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="panel-block">
+                            <p class="control has-icons-left">
+                                <input class="input is-primary" type="text" placeholder="New Task">
+                                <span class="icon is-left">
+                                    <img id="icon" src="data:image/jpeg;base64,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">
+                                </span>
+                            </p>
+                        </div>
+                        <a class="panel-block">
+                            <input type="checkbox" checked="">
+                            Make Bulma Great Again
+                        </a>
+                        <a class="panel-block">
+                            <input type="checkbox">
+                            Add some more features
+                        </a>
+                        <a class="panel-block">
+                            <input type="checkbox">
+                            Make a github account
+                        </a>
+                        <a class="panel-block">
+                            <input type="checkbox">
+                            Learn how to use github
+                        </a>
+                        <a class="panel-block">
+                            <input type="checkbox">
+                            add a .gitignore file
+                        </a>
+                    </article>
+                    <article class="message is-primary">
+                        <div class="message-header">
+                            <p>Make a github account</p>
+                            <button class="delete" aria-label="delete">
+                            </button>
+                        </div>
+                        <div class="mesage-body">
+                            <p>
+                                Got to
+                                <a href="https://github.com">
+                                    And Create A Account
+                                </a>
+                            </p>
+                            <p>
+                                Thats where you'll be able to share your work with the world.. thats where we will be putting all our code for this class.
+                            </p>
+                            <progress class="progress is-success" value="60" max="100"></progress>
+                        </div>
+                    </article>
+                    <form class="box" action="">
+                        <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Text input">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Username</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="text" placeholder="Text input" value="bulma">
+                                <span class="icon is-left">
+                                    <img id="icon" src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png">
+                                </span>
+                                <span class="icon is-right">
+                                    <img id="icon" src="https://cdn-icons-png.flaticon.com/512/5291/5291043.png">
+                                </span>
+                            </div>
+                            <p class="help is-success">This username is available</p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="text" placeholder="Text Input" value="Hello@">
+                                <span class="icon is-left">
+                                    <img id="icon" src="https://static.vecteezy.com/system/resources/previews/020/009/614/non_2x/email-and-mail-icon-black-free-png.png">
+                                </span>
+                                <span class="icon is-right">
+                                    <img id="icon" src="https://cdn-icons-png.flaticon.com/512/91/91382.png">
+                                </span>
+                            </div>
+                            <p class="help is-danger">This email is invalid</p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Subject</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select>
+                                        <option>Select dropdown</option>
+                                        <option>With Options</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Message</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    I agree to the
+                                    <a href="#">Terms and conditions</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio">
+                                    Yes
+                                </label>
+                                <label class="radio">
+                                    <input type="radio">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link">
+                                    Submit
+                                </button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-link">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="column is-one-quarter">
+                    <h1 class="title">Table of Contents</h1>
+                    <h2 class="subtitle">Intra-page navigation</h2>
+                    <aside class="menu">
+                        <p class="menu-label">
+                            General
+                        </p>
+                        <ul class="menu-list">
+                            <li>
+                                <a>Dashboard</a>
+                            </li>
+                            <li>
+                                <a>Customers</a>
+                            </li>
+                        </ul>
+                        <p class="menu-label">
+                            Administration
+                        </p>
+                        <ul class="menu-list">
+                            <li>
+                                <a>Team settings</a>
+                            </li>
+                            <li>
+                                <a class="is-active">Manage your team</a>
+                                <ul>
+                                    <li>
+                                        <a>Membership</a>
+                                    </li>
+                                    <li>
+                                        <a>Plugins</a>
+                                    </li>
+                                    <li>
+                                        <a>Add a member</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Invitation</a>
+                            </li>
+                            <li>
+                                <a>Cloud Storage Enviorment Settings</a>
+                            </li>
+                            <li>
+                                <a>Authentication</a>
+                            </li>
+                        </ul>
+                        <p class="menu-label">
+                            Transactions
+                        </p>
+                        <ul class="menu-list">
+                            <li>
+                                <a>Payments</a>
+                            </li>
+                            <li>
+                                <a>Transfers</a>
+                            </li>
+                            <li>
+                                <a>Balance</a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
