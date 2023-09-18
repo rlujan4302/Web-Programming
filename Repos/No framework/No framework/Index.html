@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Main.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="app">
     
         <h1 class="title">A special page</h1>
         <h2 class="subtitle">A very special page</h2>
@@ -38,9 +38,9 @@
                     <li>Something else</li>
                 </ul>
             </div>
-            <div class="column">
+            <div class="column" is-success is-light v-show="open">
                 <div class="notification is-success is-light">
-                    <button class="delete"></button>
+                    <button class="delete" @click="open = false"></button>
                     <strong>You did it!</strong>
                 </div>
 
@@ -52,10 +52,12 @@
         const {createApp, ref} = Vue 
 
         const app = createApp({
-            data(){
-                return{
-                    message: 'Hello Vue.js!'
-                }
+            setup(){
+                const open = ref(true);
+
+                open.value = false;
+
+                return {open}
             }
         })
 
