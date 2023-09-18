@@ -49,7 +49,17 @@
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        
+        const {createApp, ref} = Vue 
+
+        const app = createApp({
+            data(){
+                return{
+                    message: 'Hello Vue.js!'
+                }
+            }
+        })
+
+        app.mount('#app')
     </script>
 </body>
 </html>
