@@ -7,6 +7,9 @@ const server = http.createServer((req, res) => {
   res.end('Hello World\n');
 });
 
+console.log(`1: Trying to start server...`);
+
 server.listen(PORT, () => {
-    console.log('Server is running...');
+    console.log(`2: Server is running at http://localhost:3000`);
 });
+console.log(`3: End of file, waiting for requests...`);
