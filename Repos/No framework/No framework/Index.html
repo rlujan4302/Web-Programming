@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scaled=1.0">
     <title>Special page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="Main.css">
 </head>
 <body>
@@ -38,10 +39,10 @@
                     <li>Something else</li>
                 </ul>
             </div>
-            <div class="column" is-success is-light v-show="open">
-                <div class="notification is-success is-light">
-                    <button class="delete" @click="open = false"></button>
-                    <strong>You did it!</strong>
+            <div class="column">
+                <div class="notification is-success is-light" :class="x.type" v-for="x in list" v-show="x.open">
+                    <button class="delete" @click="x.open = false"></button>
+                    {{x.msg}}
                 </div>
 
             </div>
@@ -49,16 +50,22 @@
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        const {createApp, ref} = Vue 
+         const { createApp, ref } = Vue
+
 
         const app = createApp({
-            setup(){
-                const open = ref(true);
+        setup() {
+            const list = ref([
+            { msg: 'Hello World', open: true, type: 'is-success' },
+            { msg: 'Congrats! You did it', open: true, type: 'is-warning' },
+            { msg: 'You are a Vue3 master', open: true, type: 'is-info' },
+            { msg: 'Oop! You did it again', open: true, type: 'is-danger'},
+            ]);
+            
+            //open.value = false;
 
-                open.value = false;
-
-                return {open}
-            }
+            return { list }
+        }
         })
 
         app.mount('#app')
