@@ -1,4 +1,4 @@
-/ vanilla node server
+//vanilla node server
 const http = require('http');
 
 
