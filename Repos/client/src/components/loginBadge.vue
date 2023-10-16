@@ -1,7 +1,15 @@
 <script setup lang="ts">
-  import { getSession, login } from '@/model/session'
+  import { getSession, login, logout } from '@/model/session'
 
   const session = getSession()
+
+  const doLogin = () => {
+    login('', '')
+  }
+
+  const doLogOut = () => {
+    logout()
+  }
 
 
 </script>
@@ -11,7 +19,7 @@
     Welcome, {{ session.user.firstName }} {{ session.user.lastName }} <br>
     <small>
       {{ session.user.email }}
-      <a class="button is-small is-light is-warning" @click.prevent="session.user = null">
+      <a class="button is-small is-light is-warning" @click.prevent="doLogOut">
         <span class="icon">
           <i class="fas fa-sign-out-alt"></i>
         </span>
@@ -22,7 +30,7 @@
     <a class="button is-primary">
       <strong>Sign up</strong>
     </a>
-    <a class="button is-light" @click.prevent="login">
+    <a class="button is-light" @click.prevent="doLogin">
       Log in
     </a>
   </div>
