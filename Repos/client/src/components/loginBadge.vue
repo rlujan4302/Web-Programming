@@ -1,16 +1,16 @@
 <script setup lang="ts">
-  import { getSession, login, logout } from '@/model/session'
+  import { getSession, useLogin } from '@/model/session'
 
   const session = getSession()
+  const { login, logout } = useLogin()
 
   const doLogin = () => {
-    login('', '')
+    login('hbingley1@plala.or.jp', 'CQutx25i8r')
   }
 
-  const doLogOut = () => {
-    logout()
+  const doLogout = () => {
+    logout();
   }
-
 
 </script>
 
@@ -19,7 +19,7 @@
     Welcome, {{ session.user.firstName }} {{ session.user.lastName }} <br>
     <small>
       {{ session.user.email }}
-      <a class="button is-small is-light is-warning" @click.prevent="doLogOut">
+      <a class="button is-small is-light is-warning" @click.prevent="doLogout">
         <span class="icon">
           <i class="fas fa-sign-out-alt"></i>
         </span>

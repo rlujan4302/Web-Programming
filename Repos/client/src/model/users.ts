@@ -1,6 +1,6 @@
 /* B"H
 */
-import data from "../data/users.json";
+import data from "@/data/users.json";
 
 export interface User {
     id?: number,
