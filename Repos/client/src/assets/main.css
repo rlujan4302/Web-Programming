@@ -1,2 +1,16 @@
+
 @import url('bulma/css/bulma.css');
 @import url('@fortawesome/fontawesome-free/css/all.css');
+
+.navbar{
+    background-color: maroon;
+}
+.navbar-item{
+    color: white;
+}
+.navbar-link{
+    color: white;
+}
+.navbar-item-damn{
+    color: black;
+}

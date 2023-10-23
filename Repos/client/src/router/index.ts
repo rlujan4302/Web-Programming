@@ -11,7 +11,10 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-    { path: "/login", name: "login", component: LoginView },
+    { path: "/login",
+      name: "login", 
+      component: LoginView 
+    },
     {
       path: "/about",
       name: "about",
@@ -19,9 +22,15 @@ const router = createRouter({
       beforeEnter: requireLogin,
     },
     {
-      path: "/products",
-      name: "products",
-      component: () => import("../views/ProductList.vue"),
+      path: "/myactivity",
+      name: "myactivity",
+      component: () => import("../views/MyActivity.vue"),
+      beforeEnter: requireLogin,
+    },
+    {
+      path: "/friendsactivity",
+      name: "friendsactivity",
+      component: () => import("../views/FriendsActivity.vue"),
       beforeEnter: requireLogin,
     },
   ],

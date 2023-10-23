@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import LoginBadge from './loginBadge.vue';
-import FlyoutPanel from './FlyoutPanel.vue';
 
 const isActive = ref(false);
 const isShoppingCartOpen = ref(false);
@@ -16,7 +15,7 @@ const isShoppingCartOpen = ref(false);
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="28" height="28" />
 
       </a>
-
+      <a></a>
       <a role="button" class="navbar-burger" :class="{ 'is-active': isActive }" @click="isActive = !isActive" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -27,49 +26,26 @@ const isShoppingCartOpen = ref(false);
     <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': isActive }">
       <div class="navbar-start">
         <RouterLink class="navbar-item" to="/" >Home</RouterLink>
-        <RouterLink class="navbar-item" to="/about">About</RouterLink>
-        <RouterLink class="navbar-item" to="/products">Products</RouterLink>
-        
+        <RouterLink class="navbar-item" to="/myactivity">MyActivity</RouterLink>
+        <RouterLink class="navbar-item" to="/friendsactivity">FriendsActivity</RouterLink>
+        <RouterLink class="navbar-item" to="/about">Search</RouterLink>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            More
+            Admin
           </a>
-
           <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
-            </a>
-            <a class="navbar-item">
-              Jobs
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
+            <RouterLink class="navbar-item-damn" to="/">Users</RouterLink>
           </div>
         </div>
       </div>
 
       <div class="navbar-end">
         <div class="navbar-item">
-          <a class="button" :class="{ 'is-active': isShoppingCartOpen }" @click.prevent="isShoppingCartOpen = !isShoppingCartOpen">
-            <span class="icon">
-              <i class="fas fa-shopping-cart"></i>
-            </span>
-          </a>
-        </div>
-        <div class="navbar-item">
           <LoginBadge />
         </div>
       </div>
     </div>
   </nav>
-  <FlyoutPanel  :class="{ 'is-active': isShoppingCartOpen }">
-    <h1 class="subtitle">Shopping Cart</h1>
-  </FlyoutPanel>
 </template>
 
 
@@ -77,6 +53,6 @@ const isShoppingCartOpen = ref(false);
 
 .router-link-active {
   font-weight: bold;
-  border-bottom: 2px solid #00d1b2;
+  border-bottom: 2px solid maroon;
 }
 </style>
