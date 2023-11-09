@@ -28,7 +28,6 @@ app
     });
 
 
-
 console.log('1: Trying to start server...');
 
 app.listen(PORT, () => {
