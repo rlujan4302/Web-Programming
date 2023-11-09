@@ -11,12 +11,15 @@ const toaster= useToast();
 const session = reactive({
   user: null as User | null,
   redirectUrl: null as string | null,
-  messages: [] as {type: string, text: string}[]
+  messages: [] as {type: string, text: string}[],
+  loading: 0
 })
 
 export function api(action: string){
-  toaster.warning("This is a warning")
+  session.loading++;
   return myFetch.api(`${action}`)
+    .catch(err=> showError(err))
+    .finally(()=> session.loading--);
 }
 
 export function getSession(){
