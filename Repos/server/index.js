@@ -2,11 +2,16 @@
 
 const path = require('path')
 const express = require('express');
+require('dotenv').config();
 const productController = require('./controllers/products');
 const userController = require('./controllers/users');
 const app = express();
 
-const PORT = 3000;
+const mongo = require('./models/mongo');
+
+const PORT = process.env.PORT ?? 3000;
+
+console.log(`The best class at Suny New Paltz is ${process.env.Best_Class}`);
 
 app
     .use('/', express.static(path.join( __dirname, '../client/dist/') ) )
@@ -26,6 +31,15 @@ app
     .get('*', (req, res) => {
         res.sendFile(path.join( __dirname, '../client/dist/index.html') )
     });
+
+app
+    .use((err, req, res, next) => {
+        console.error(err);
+        res
+            .status(err?.status || 500)
+            .json({ message: err?.message || err });
+    })
+
 
 
 console.log('1: Trying to start server...');
