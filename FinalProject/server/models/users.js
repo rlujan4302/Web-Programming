@@ -56,6 +56,7 @@
  * @type { {users: User[]} }
  */
 const data = require('../data/users.json');
+
 const {client, DB_NAME, ObjectId} = require("./mongo");
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET;
