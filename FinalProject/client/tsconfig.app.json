@@ -5,6 +5,7 @@
     "compilerOptions": {
       "composite": true,
       "baseUrl": ".",
+      "types": ["node", "vite/client"],//Fixed a Bug with env not existing on type "importMeta"
       "paths": {
         "@/*": ["./src/*"]
       }
