@@ -11,6 +11,7 @@
             "username": "robbi0001",
             "password": "Lujan0001",
             "birthDate": "2002-04-03",
+            "image": "https://robohash.org/hicveldicta.png",
             "height": 175,
             "weight": 169.4,
             "ip": "117.29.254",
@@ -27,8 +28,8 @@
                 "cardType": "maestro",
                 "currency": "Peso",
                 "iban": "NO17 0695 2754 967"
-            },
-        }
+            }
+        },
         {
             "id": 2,
             "firstName": "Miles",
@@ -40,6 +41,7 @@
             "username": "hbingley1",
             "password": "CQutx25i8r",
             "birthDate": "2003-08-02",
+            "image": "https://robohash.org/hicveldicta.png",
             "height": 175,
             "weight": 169.4,
             "ip": "117.29.254",
@@ -56,8 +58,8 @@
                 "cardType": "maestro",
                 "currency": "Peso",
                 "iban": "NO17 0695 2754 967"
-            },
-        }
+            }
+        },
         {
             "id": 3,
             "firstName": "Terrill",
@@ -69,6 +71,7 @@
             "username": "rshawe2",
             "password": "OWsTbMUgFc",
             "birthDate": "1992-12-30",
+            "image": "https://robohash.org/hicveldicta.png",
             "height": 175,
             "weight": 169.4,
             "ip": "117.29.254",
@@ -85,8 +88,8 @@
                 "cardType": "maestro",
                 "currency": "Peso",
                 "iban": "NO17 0695 2754 967"
-            },
-        }
+            }
+        },
         {
             "id": 4,
             "firstName": "Miles",
@@ -98,6 +101,7 @@
             "username": "yraigatt3",
             "password": "sRQxjPfdS",
             "birthDate": "1969-01-16",
+            "image": "https://robohash.org/hicveldicta.png",
             "height": 175,
             "weight": 169.4,
             "ip": "117.29.254",
@@ -114,7 +118,7 @@
                 "cardType": "maestro",
                 "currency": "Peso",
                 "iban": "NO17 0695 2754 967"
-            },
+            }
         }
     ]
 }
