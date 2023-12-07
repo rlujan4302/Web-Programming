@@ -2,7 +2,7 @@
 import { ref, provide } from 'vue';
 import { RouterView } from 'vue-router';
 import { getSession } from './model/session';
-import Navbar from './components/Navbar.vue';
+import Navbar from './components/NavBar.vue';
 
 const isLoggedIn = ref(false);
 const loggedInUser = ref('');
@@ -15,7 +15,6 @@ const session = getSession();
     <Navbar />
   </header>
   <div class="container">
-    <progress class="progress is-small is-primary is-striped" max="100" v-if="session.loading">15%</progress>
     <RouterView />
   </div>
 </template>

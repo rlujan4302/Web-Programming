@@ -1,5 +1,5 @@
 //Remember to get rid of local host
-const API_URL = import.meta.env.VITE_API_ROOT as string;
+const API_ROOT = import.meta.env.VITE_API_ROOT as string;
 
 export function rest(url: string, data?: any, method?: string, headers?: any){
     return fetch(url, {
@@ -18,4 +18,14 @@ export function rest(url: string, data?: any, method?: string, headers?: any){
 
 export function api(action: string, body?: unknown, method?: string, headers?: HeadersInit){
     return rest(`${API_ROOT}/${action}`, body, method, headers);
+}
+
+export type DataEnvelope<T> = {
+    data: T,
+    isSuccess: boolean,
+    error?: string,
+}
+
+export type DataListEnvelope<T> = DataEnvelope<T[]> & {
+    total: number,
 }

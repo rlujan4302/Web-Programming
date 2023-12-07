@@ -6,9 +6,9 @@ import signView from '../views/signView.vue';
 import searchView from '../views/searchView.vue';
 import myActivity from '../views/myActivityView.vue';
 
-const router = createrRouter({
+const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
-    routers: [
+    routes: [
         {
             path: "/",
             name: "home",

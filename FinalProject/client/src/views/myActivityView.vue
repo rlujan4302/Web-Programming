@@ -110,7 +110,7 @@
   <script setup lang="ts">
   import { ref, computed, onMounted } from 'vue';
   import { getSession } from '../model/session';
-  import { getWorkoutsByUserId, type Workout, addWorkout, removeWorkout } from "@/model/workouts";
+  import { getWorkoutsByUserId, type Workout, createWorkout, removeWorkout } from "@/model/workouts";
   
   const daysAgoToDateString = (daysAgo: number) => {
     const date = new Date();
@@ -180,7 +180,7 @@
   async function saveWorkout() {
     currentWorkout.value.id = Date.now();
     try {
-      await addWorkout({ ...currentWorkout.value }, session.user?._id ?? -1);
+      await createWorkout({ ...currentWorkout.value }, session.user?._id ?? -1);
       debugger;
       workouts.value = await getWorkoutsByUserId(session.user?._id ?? -1);
     } catch (error) {

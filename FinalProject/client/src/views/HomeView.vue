@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {defineComponent, ref} from 'vue';
-import {getSession} from '../model/session.ts';
-import {getWorkoutsByUserId, type Workout, type stats} from "../model/workouts";
+import {getSession} from '../model/session';
+import {getWorkoutsByUserId, type Workout} from "../model/workouts";
 
 const session = getSession()
 const test = ref('test')
@@ -43,11 +43,6 @@ const workoutByWeekFilterFunc = (workout: Workout) => {
   <div class="about columns is-multiline">
     <div class="column is-hidden-touch is-one-quarter">
       <div class="box is-small-hidden" />
-    </div>
-    <div class="column">
-      <SmallStatistic typeOfDisplay="today" :stats="todayStats"/>
-      <SmallStatistic  typeOfDisplay="week" :stats="weekStats"/>
-      <SmallStatistic  typeOfDisplay="all" :stats="allStats"/>
     </div>
     <div class="column is-one-quarter">
       <div class="box is-small-hidden" />

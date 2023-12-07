@@ -13,11 +13,10 @@ export interface User {
 }
 
 export function getUsers(): Promise<User[]>{
-    return api("users"):
+    return api("users");
 }
 
 export async function getUserByEmail(email: string): Promise<User | undefined>{
     const users = await getUsers();
-    const user = users.data.find((x: User) => x.email === email);
-    return user;
+    return users.find((x: User) => x.email === email);
 }
