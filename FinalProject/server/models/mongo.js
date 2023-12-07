@@ -9,5 +9,5 @@ async function connect(){
 }
 
 module.exports = {
-    connect, ObjectId
+    connect, ObjectId, DB_NAME, client
 };
