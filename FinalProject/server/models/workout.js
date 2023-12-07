@@ -6,11 +6,6 @@
 * @property {number} duration
 * @property {string} location
 * @property {string} photo
-@typedef {Object} Stats 
-* @property {number} distance
-* @property {number} duration
-* @property {number} avgpace
-* @property {number} calories
 */
 /**
  * @type {{ workouts: workouts[]}}
