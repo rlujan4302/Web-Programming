@@ -1,5 +1,6 @@
 import {api} from "./session";
 import data from "../data/users.json";
+import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 
 export interface User {
     _id: number,
@@ -12,8 +13,8 @@ export interface User {
     image: string
 }
 
-export function getUsers(): Promise<User[]>{
-    return api("users");
+export function getUsers(): Promise<DataListEnvelope<User>> {
+    return api('users');
 }
 
 export async function getUserByEmail(email: string): Promise<User | undefined>{

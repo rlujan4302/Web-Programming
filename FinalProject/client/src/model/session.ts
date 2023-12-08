@@ -2,8 +2,8 @@ import { reactive } from "vue";
 import { useRouter } from "vue-router"
 import { useToast } from "vue-toastification";
 import type { DataEnvelope, DataListEnvelope } from "./myFetch";
+import * as myFetch from "./myFetch";
 import { type User, getUserByEmail } from "./users";
-import type {Workout} from "./workouts";
 
 const toast = useToast();
 

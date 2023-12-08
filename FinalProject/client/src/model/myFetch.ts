@@ -1,5 +1,4 @@
-//Remember to get rid of local host
-const API_ROOT = import.meta.env.VITE_API_ROOT as string;
+const API_ROOT = import.meta.env.VITE_API_URL;
 
 export function rest(url: string, data?: any, method?: string, headers?: any){
     return fetch(url, {
@@ -10,9 +9,9 @@ export function rest(url: string, data?: any, method?: string, headers?: any){
         },
         body: data ? JSON.stringify(data) : undefined,
     })
-        .then(response => response.ok 
-            ? response.json() 
-            : response.json().then(x=> { throw({ ...x, message: x.error }) } )
+        .then(res => res.ok 
+            ? res.json() 
+            : res.json().then(x=> { throw({ ...x, message: x.error }) } )
         );
 }
 
