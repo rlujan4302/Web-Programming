@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import { RouterLink } from 'vue-router'
-import { getSession, logout } from '../model/session'
+import { getSession} from '../model/session'
 
 const session = getSession()
-const isActive = ref(false);
+const isActive = computed(() => false);
 const isLoggedIn = computed(() => session.user !== null);
 
 </script>
@@ -26,7 +26,7 @@ const isLoggedIn = computed(() => session.user !== null);
 
     <div id="navMenu" class="navbar-menu" :class="{ 'is-active': isActive }">
       <div class="navbar-start">
-        <RouterLink class="navbar-item" to="/my-activity">
+        <RouterLink class="navbar-item" to="/myActivity">
           <span class="icon mr-2"><i class="fas fa-user"></i></span>
           My Activity
         </RouterLink>
@@ -59,10 +59,6 @@ const isLoggedIn = computed(() => session.user !== null);
               <strong>
               <RouterLink class="navbar-item" to="/login">Log in</RouterLink>
             </strong>
-            </a>
-            <a v-if="isLoggedIn" class="button is-light login-button"
-              @click="logout">
-              Log out
             </a>
             <a class="button is-info" href="https://X.com" target="_blank">
               <span class="icon mr-2">

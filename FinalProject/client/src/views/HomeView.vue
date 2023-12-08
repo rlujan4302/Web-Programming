@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import {defineComponent, ref} from 'vue';
-import {getSession} from '../model/session';
-import {getWorkoutsByUserId, type Workout} from "../model/workouts";
+import { defineComponent, ref } from 'vue'
+import { getSession } from '../model/session'
+import { getWorkoutsByUserId, type Workout} from "@/model/workouts";
 
 const session = getSession()
 const test = ref('test')
 
+// checks if the workout is today
 const workoutByTodayFilterFunc = (workout: Workout) => {
   const today = new Date(); 
   const todayMinusOne = new Date(today.setDate(today.getDate() - 1));
@@ -22,6 +23,7 @@ const workoutByTodayFilterFunc = (workout: Workout) => {
   return false;
 }
 
+// checks if the workout is within the past week
 const workoutByWeekFilterFunc = (workout: Workout) => {
   const today = new Date(); // 1501653935994
   const sevenDaysAgo = new Date(today.setDate(today.getDate() - 7));
@@ -43,6 +45,8 @@ const workoutByWeekFilterFunc = (workout: Workout) => {
   <div class="about columns is-multiline">
     <div class="column is-hidden-touch is-one-quarter">
       <div class="box is-small-hidden" />
+    </div>
+    <div class="column">
     </div>
     <div class="column is-one-quarter">
       <div class="box is-small-hidden" />

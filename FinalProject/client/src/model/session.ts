@@ -2,7 +2,6 @@ import { reactive } from "vue";
 import { useRouter } from "vue-router"
 import { useToast } from "vue-toastification";
 import type { DataEnvelope, DataListEnvelope } from "./myFetch";
-import * as myFetch from "./myFetch";
 import { type User, getUserByEmail } from "./users";
 import type {Workout} from "./workouts";
 
@@ -19,7 +18,6 @@ const session = reactive ({
     }[]
 })
 export function createUser(user: User): Promise<DataEnvelope<User>> {
-
   return api('/users/', user, 'POST')
 }
 
@@ -53,24 +51,43 @@ export function showError(err: any) {
     toast.error( err.message ?? err);
 }
 
-export function useLogin(email: string, password: string) {
-    return async function(){
-        const response = await api('/users/login', {email, password}, 'POST');
-        session.user = response.data.user;
-        console.log(session.user);
-
-        if(!session.user) {
-            return;
-        }
+export async function loginWithServer(email: string, password: string): Promise<User | null> {
+    try {
+      const response = await api('/users/login', {email, password}, 'POST');
+      session.user = response.data.user;
+  
+      if(session.user) {
         session.user.token = response.data.token;
-        return response.data.user;
+        return session.user;
+      } else {
+        toast.error("Login unsuccessful");
+        return null;
+      }
+    } catch (err) {
+      showError(err);
+      return null;
     }
 }
 
-export function logout(){
-    session.user = null;
+export function useLogin(){
+    const router = useRouter();
+  
+    return {
+      async login(email: string, password: string): Promise< User | null> {
+        const response = await api("users/login", { email, password });
+  
+        session.user = response.user;
+        session.token = response.token;
+  
+        router.push(session.redirectUrl || "/");
+        return session.user;
+      },
+      logout(){
+        session.user = null;
+        router.push("/login");
+      }
+    }
 }
-
 export function useSession() {
     return session;
 }

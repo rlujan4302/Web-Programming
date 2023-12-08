@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type {User} from "../model/users";
-import {ref} from "vue";
-import {useRoute} from "vue-router";
-import {createUser, useSession} from "../model/session";
-import router from "../router";
+import type { User } from "@/model/users";
+import { ref } from "vue";
+import { useRoute } from "vue-router";
+import { createUser, useSession } from "@/model/session";
+import router from "@/router";
 
 const session = useSession();
 
